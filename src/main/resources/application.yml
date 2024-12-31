@@ -5,12 +5,17 @@ server:
 spring:
   application:
     name: yu-picture-backend
+  profiles:
+    active: local
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mie_picture
     username: root
     password: root
+  servlet:
+    multipart:
+      max-file-size: 10MB
 
 mybatis-plus:
   configuration:
@@ -32,5 +37,5 @@ knife4j:
       default:
         api-rule: package
         api-rule-resources:
-          - com.mrzhang.miepicturebackend.controller
+          - com.mrxzhang.miepicturebackend.controller
 
